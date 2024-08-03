@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>User Data</title>
+</head>
+
+<body>
+    <h1>Users Data1</h1>
+   
+
+    <div id="formContainer">
+        <label for="nameInput">
+            Name:
+        </label>
+        <input type="text" id="nameInput" 
+            placeholder="Enter your name...">
+
+        <label for="ageInput">
+            Age:
+        </label>
+        <input type="number" id="ageInput" 
+            placeholder="Enter your age...">
+            <br>
+            <label for="genderInput">
+                Gender:
+            </label>
+            <input type="text" id="genderInput" 
+                placeholder="male or female?">
+                <br>
+          
+        <br>
+        <button onclick="addUser()">Add</button>
+
+    </div>
+
+    <table id="outputTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+    </table>
+
+    <div>
+        <button onclick="MoreInfo()">More Info</button>
+        
+    </div>
+
+    <div id="gTable" class="gtable">
+   
+    
+    <div   class="fTable"> 
+        <table id="fTable" class="fTable">
+            <tr>
+                <th>Female</th>
+            </tr>
+        </table></div>
+
+    <div  class="mTable">  
+          <table id="mTable" class="mTable">
+            <tr>
+                <th>Male</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="maxmin">
+        <span id="Youngest_span">Youngest: </span>
+        <br>
+       <span id="Oldest_span">Oldest: </span>
+    </div>
+    </div>
+
+    <script src="./js.js" ></script>
+    
+
+</body>
+
+</html>
