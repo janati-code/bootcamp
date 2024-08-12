@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تایید کد کاربری</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <img src="./images/logo.svg" alt="logo-digikala" />
+                <h2 style="color:black">
+                    ورود | ثبت‌نام
+                </h2>
+                <p>جهت  ارسال کد کلیک کنید</p>
+            </div>
+            <div class="content" id="content">
+                <button id="generateBtn" onclick="OTPFn(event)">
+                    ارسال کد
+                </button>
+                <div id="otpForm" class="otp-form">
+                    <input type="text" id="userOTP" placeholder="کد را وارد کنید" />
+                    <div id="timer" class="timer"></div>
+                    <button onclick="OTPVerifyFn()">
+                        تایید
+                    </button>
+                </div>
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check"></i>
+                    <p>تبریک ! شما وارد شدید.</p>
+                </div>
+                <div id="errorMessage" class="error-message">کد اشتباه است</div>
+               
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
