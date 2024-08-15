@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css" />
+
+    <title>Document</title>
+
+</head>
+<body onload="getPosts()">
+    <h1> Articles</h1>
+    <div class="container" id="container"></div>
+
+    <form>
+
+		<h2 class="title text-center mb-4">Add your article here</h2>
+
+			<!-- Name -->
+			<div class="form-group position-relative">
+				<label for="formName" class="d-block">
+					<i class="icon" data-feather="user"></i>
+				</label>
+				<input type="text" id="formName" class="form-control form-control-lg thick" placeholder="Name">
+			</div>
+
+			<!-- E-mail -->
+			<div class="form-group position-relative">
+				<label for="formEmail" class="d-block">
+					<i class="icon" data-feather="mail"></i>
+				</label>
+				<input type="email" id="formEmail" class="form-control form-control-lg thick" placeholder="E-mail">
+			</div>
+
+            <div class="form-group position-relative">
+				<label for="formTitle" class="d-block">
+					<i class="icon" data-feather="user"></i>
+				</label>
+				<input type="text" id="formTitle" class="form-control form-control-lg thick" placeholder="Article title">
+			</div>
+
+
+
+			<!-- Message -->
+			<div class="form-group message">
+				<textarea id="formBody" class="form-control form-control-lg" rows="7" placeholder="Article Body"></textarea>
+			</div>
+		
+			<!-- Submit btn -->
+			<div class="text-center">
+				<button type="submit" onclick="PostData()" class="btn btn-primary" tabIndex="-1">Send message</button>
+			</div>
+	</form>
+
+    
+    <script src="./script.js"></script>
+</body>
+</html>

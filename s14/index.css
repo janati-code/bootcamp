@@ -1,0 +1,233 @@
+:root {
+	--clr-primary: hsl(20, 80%, 60%);
+	--clr-primary-hover: hsl(20, 80%, 65%);
+	--transition: 0.5s ease;
+}
+
+
+body {
+	font-family: "Poppins", sans-serif;
+	padding: 4rem 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: right;
+	align-items: start;
+	background: hsl(40, 20%, 90%);
+}
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+h1 {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	font-size: 2.75rem;
+	letter-spacing: -0.05em;
+	font-weight: 700;
+	margin-bottom: 2.5rem;
+	text-shadow: 1px 1px 0px hsl(40, 20%, 90%), -1px 1px 0px hsl(40, 20%, 90%);
+	&:after {
+		content: "";
+		position: absolute;
+		opacity: 0.5;
+		z-index: -1;
+		bottom: 12px;
+		left: 0;
+		right: 0;
+		background: var(--clr-primary);
+		height: 12px;
+		width: 100%;
+	}
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+	gap: 1.5rem;
+}
+.hoverbox {
+	position: relative;
+	background: hsla(221, 40%, 22%, 0.9);
+	padding: 32px 28px;
+	overflow: hidden;
+	border-radius: 10px;
+	transition: 0.35s ease-in;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: auto;
+		right: 0;
+		width: 0%;
+		height: 0.35rem;
+		background: var(--clr-primary);
+		transition: var(--transition);
+	}
+	img {
+		/* position: absolute; */
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: -1;
+		transition: var(--transition);
+		/* filter: blur(1px) saturate(0); */
+	}
+	h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #fff;
+		margin-bottom: 1rem;
+	}
+	p {
+		color: rgba(255, 255, 255, 0.8);
+		margin-bottom: 1.125rem;
+		font-weight: 300;
+	}
+	a {
+		position: relative;
+		color: #fff;
+		text-decoration: unset;
+		text-transform: uppercase;
+		font-size: 0.875rem;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		transition: color 0.35s;
+		&:after {
+			content: ">";
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: 1rem;
+			border: 2px solid #fff5;
+			border-radius: 50%;
+			width: 1.5rem;
+			height: 1.5rem;
+			transition: all 0.35s, color 0s;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			width: 0rem;
+			height: 0.125rem;
+			background: #fff;
+			right: 0.75rem;
+			top: calc(50% - 0.025rem);
+			transition: 0.35s;
+		}
+	}
+	&:hover {
+        background: hsla(221, 45%, 28%, 0.9);
+		box-shadow: 0px 16px 24px rgba(0, 15, 0, 0.1);
+		&:after {
+			width: 100%;
+			left: 0;
+			right: auto;
+		}
+		& a:after {
+			border-color: transparent;
+			margin-left: 2rem;
+			transition: all 0.35s, color 0s;
+		}
+		& a:before {
+			width: 1.5rem;
+			background: var(--clr-primary);
+		}
+		& a {
+			color: var(--clr-primary);
+			&:hover {
+				color: var(--clr-primary-hover);
+				&:before {
+					background: var(--clr-primary-hover);
+				}
+			}
+		}
+	
+	}
+}
+
+
+
+form {
+	min-width: 25rem;
+    margin-top: 4rem;
+
+	
+	.title {
+		color: #212529;
+		font-size: 1.5rem;
+	}
+	
+  .form-control {
+    background-color: #f2f6f8;
+		border-radius: 2rem;
+    border: none;
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+
+    margin: 5px;
+		
+    &.thick {
+      height: 3.3rem;
+      padding: .5rem 3.5rem;
+    }
+		
+		&:focus {
+			background-color: #f2f6f8;
+			border: none;
+			box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+		}
+  }
+	
+	.message .form-control {
+			padding: .5rem 1.8rem;
+	}
+	
+  ::placeholder {
+    font-family: 'Quicksand', sans-serif;
+		font-weight: 600;
+    font-size: 1.1rem;
+    color: #838788;
+    position: relative;
+    left: 0;
+  }
+	
+  input,
+  textarea {
+    color: #212529;
+    font-size: 1.1rem;
+  }
+	
+  .icon {
+    color: #57565c;
+    height: 1.3rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.1rem;
+  }
+}
+
+.btn.btn-primary {
+    margin: 10px;
+	font-weight: bold;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 3rem;
+  background-color:  hsla(221, 40%, 22%, 0.9);
+  background-size: 300% 100%;
+  transition: all 0.3s ease-in-out;
+  color: #f2f6f8;
+}
+
+.btn.btn-primary:hover:enabled {
+  box-shadow: 0 0.5em 0.5em -0.4em #ff903ced;
+  color: #fff;
+  background-size: 100% 100%;
+  transform: translateY(-0.15em);
+}
+
